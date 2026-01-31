@@ -1,0 +1,101 @@
+:root{
+    --def-padd: 12px;
+    --buttons-height: 30px;
+}
+
+.message{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 4px var(--def-padd);
+    color: green;
+}
+
+.agendas{
+    margin-top: 20px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 14px;
+}
+
+.agendas > .agenda{
+    height: 200px;
+    border: 1px solid black;
+    background: white;
+    color: black;
+    padding: var(--def-padd);
+    display: flex;
+    flex-direction: column;
+}
+
+.agendas > #red:hover{
+    background: hsl(0, 100%, 90%);
+}
+
+.agendas > #blue:hover{
+    background: hsl(240, 100%, 90%);
+}
+
+.agendas > #yellow:hover{
+    background: hsl(60, 100%, 90%);
+}
+
+.agendas > #green:hover{
+    background: hsl(120, 100%, 90%);
+}
+
+.agendas > #pink:hover{
+    background: hsl(320, 100%, 90%);
+}
+
+.agenda > .details{
+    height: calc(100% - var(--buttons-height));
+}
+/* 
+.agenda{
+    background: white;
+} */
+
+.agenda > .details > .name{
+    font-weight: 550;
+    padding: 6px 0;
+}
+
+.agenda > .details > .description{
+    padding: 4px;
+    font-style: italic;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.agenda > .details > .type > span{
+    text-transform: uppercase;
+}
+
+.agenda > .buttons{
+    height: var(--buttons-height);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.agenda > .buttons > a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 0 8px;
+    border: 1px solid black;
+}
+
+.buttons > a:nth-child(2){
+    border:1px solid red;
+    color: red;
+}

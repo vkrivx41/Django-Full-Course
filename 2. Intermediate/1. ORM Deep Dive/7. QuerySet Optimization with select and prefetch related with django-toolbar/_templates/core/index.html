@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for restaurant in restaurants %}
+    <p>{{ restaurant }}</p>
+{% endfor %}
+
+<!-- {% for sum in sums %}
+    <p>{{ sum.total }}</p>
+{% endfor %} -->
+
+{% endblock content %}

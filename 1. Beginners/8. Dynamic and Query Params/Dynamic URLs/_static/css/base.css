@@ -1,0 +1,54 @@
+*, *::before, ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --nav-height: 80px;
+    --bg-color: white;
+    --txt-color: black;
+    --bg-color: black;
+    --txt-color: white;
+}
+
+body{
+    background: var(--txt-color);
+    overflow-x: hidden;
+}
+
+.navigation{
+    height: var(--nav-height);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation > ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.navigation > ul > li{
+    font-size: 1rem;
+}
+
+.navigation > ul > li > a{
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--bg-color);
+    letter-spacing: 1px;
+}
+
+.content{
+    width: 80vw;
+    height: calc(100vh - var(--nav-height));
+    margin: 0 auto;
+    /* background: var(--bg-color);
+    color: var(--txt-color); */
+    border-top: 2px solid var(--txt-color);
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/agenda/add.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <div class="add-content">
+        <div class="add-header">
+            <h2>Add New Agenda</h2>
+        </div>
+        <div class="add-form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

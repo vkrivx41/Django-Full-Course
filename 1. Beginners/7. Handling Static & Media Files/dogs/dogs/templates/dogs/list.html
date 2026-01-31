@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'dogs/main.css' %}">
+    <title>Dogs List</title>
+</head>
+<body>
+    <div class="header">
+        <a href="{% url 'dogs:upload' %}">Add New Dog</a>
+    </div>
+    <div class="list">
+        {% if not dogs %}
+            <h2>There are no dogs available at the moment.</h2>
+        {% else %}
+            <ul>
+                {% for dog in dogs %}
+                    <li>
+                        <div class="image">
+                            <img src="{{ dog.image.url }}" alt="">
+                        </div>
+                        <div class="name">{{ dog.name }}</div>
+                        <div class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+                        <div class="tags">
+                            <span>#photograph</span>
+                            <span>#travel</span>
+                            <span>#winter</span>
+                        </div>
+                        <div class="delete">
+                            <a href="{% url 'dogs:delete' dog.pk %}">Delete</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

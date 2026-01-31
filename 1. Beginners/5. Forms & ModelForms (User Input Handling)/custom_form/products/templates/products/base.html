@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href={% static "products/main.css" %}>
+    {% block links %}
+    {% endblock links %}
+</head>
+<body>
+  <li>
+    <ul>
+      <a href="{% url "products:home" %}">DJANGO STORE</a>
+    </ul>
+    <ul><a href={% url "products:home" %}>Home</a></ul>
+    <ul><a href={% url "products:add" %}>Add Product</a></ul>
+    <ul><a href={% url "products:sellers" %}>Sellers</a></ul>
+  </li>
+  <div class="page-body">
+    {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+</html>

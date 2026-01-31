@@ -1,0 +1,15 @@
+
+What is covered in this Chapter (5)
+
+
+Updating
+
+- Update a single row
+- Checking the state of the model
+- Update a query set with .update() [it doesn't run the save() method logic]
+
+Deletion
+
+- deleting a row
+- deletion and foreign key constraints
+- deleting a query set

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/home/main.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <div class="header">
+        <h2>Applications</h2>
+    </div>
+    <div class="applications">
+        {% if messages %}
+            {% for msg in messages %}
+                <h5 style="color: green;">{{ msg }}</h5>
+            {% endfor %}
+        {% endif %}
+        
+        {% if not applications %}
+            <h3 class="no_app" style="color: red">No Applications Yet.</h3>
+        {% else %}
+            {% for app in applications %}
+                <div class="app">
+                    <div class="essentials">
+                        <div class="name">{{ app.name }}</div>
+                        <div class="title">{{ app.title }}</div>
+                        <div class="resume">{{ app.resume }}</div>
+                    </div>
+                    <div class="buttons">
+                        <a href="{% url 'cv:edit' %}?id={{ app.id }}">Edit</a>
+                        <a href="{% url 'cv:delete' %}?id={{ app.id }}">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock content %}

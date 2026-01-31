@@ -1,0 +1,14 @@
+
+What is covered in this Chapter (7)
+
+
+- the django-debug-toolbar library 
+    - install (pip)
+    - add to apps (settings)
+    - add the url (urls)
+    - add the middleware (settings)
+    - add internal ips (localhost) (settings)
+    - load static files by adding it to the urls
+- prefetched_related 
+- select_related
+- Prefetch objects

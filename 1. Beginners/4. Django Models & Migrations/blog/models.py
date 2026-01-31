@@ -1,0 +1,15 @@
+
+from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
+# the id primary key is automatically added by the migrations
+
+class Post(models.Model):
+    title = models.CharField(max_length=100, unique=True, null=False)
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __repr__(self) -> models.CharField:
+        return self.title

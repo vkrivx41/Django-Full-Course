@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/agenda/delete.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <h1>Confirm Deletion</h1>
+    <h4>Are you sure you want to delete this Agenda?</h4>
+    {{ agenda }}
+    <br>
+    <br>
+    <a href="{% url 'agenda:delete' agenda.id %}?confirm=yes">Yes</a>
+    <a href="{% url 'agenda:delete' agenda.id %}?confirm=no">Not sure!</a>
+{% endblock content %}

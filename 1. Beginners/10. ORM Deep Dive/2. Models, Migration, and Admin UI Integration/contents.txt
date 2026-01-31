@@ -1,0 +1,10 @@
+
+What is covered in this Chapter (2)
+
+
+- Build models with django
+- Add fields to models
+- Create Foreign Keys between models
+- Use Migrations to alter database changes
+- Add choices to a Django fields
+- Add models to the Django Admin

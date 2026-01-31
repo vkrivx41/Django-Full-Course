@@ -1,0 +1,65 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content > .header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 7%;
+}
+
+.content > .applications{
+    width: 85%;
+    flex: 93%;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+}
+
+.applications > .app{
+    height: 200px;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    --buttons-height: 20%;
+}
+
+.app > .essentials{
+    width: 100%;
+    flex: calc(100% - var(--buttons-height));
+}
+
+.app > .essentials > div{
+    width: 100%;
+    margin: 5px 0;
+    word-break: break-all;
+    writing-mode: h;
+}
+
+.app > .buttons{
+    width: 100%;
+    flex: var(--buttons-height);
+}
+
+.app > .buttons > a{
+    height: var(--buttons-height);
+    padding: 10px 8px;
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+.content > .applications > .no_app{
+    text-align: center;
+}

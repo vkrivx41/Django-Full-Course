@@ -1,0 +1,15 @@
+{% extends "products/base.html" %}
+{% block content %}
+    <h1>Home Page</h1>
+    <div class="products-grid">
+        {% for product in products %}
+            <div class="product">
+                <p>{{ product.product_name }}</p>
+                <p>{{ product.category }}</p>
+                <p>${{ product.price }}</p>
+                <p>{{ product.available_colors }}</p>
+                <p>{{ product.promotion_date_ends }}</p>
+            </div>
+        {% endfor %}   
+    </div>
+{% endblock content%}

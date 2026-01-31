@@ -1,0 +1,9 @@
+
+What is covered in this Chapter (8)
+
+
+- Junction Tables
+- M2M Managers
+- Querying M2M relations [add, remove, count, all, set, clear, create, filter, order_by, (other manager methods), backward queries]
+- Through Models [methods, operations, arguments]
+- Prefetching M2M fields

@@ -1,0 +1,17 @@
+
+What is covered in this Chapter (9)
+
+
+- values method (usecases, db level functions, foreign references)
+- values_list method (use, named, flattening)
+- aggregations
+    - functions: count, avg, sum, min, max, stdev, variance
+    - combination
+    - filtering
+    - foreign key references
+- annotations
+    - basic functions: length, sum, count, avg
+    - advanced functions: concat, row_number, lead, lag, rank, denser_rank, cume_disk, perc_rank, cume_dist
+    - distinct grouping
+    - filtering and ordering
+    - aggregate annotations   

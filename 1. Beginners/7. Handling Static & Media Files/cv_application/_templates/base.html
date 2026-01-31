@@ -1,0 +1,39 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    {% block links %}
+    {% endblock links %}
+
+    <title>
+        {% if title %}
+            {{ title }}
+        {% else %}
+            Application
+        {% endif %}
+    </title>
+</head>
+<body>
+    <div class="top-header">
+        <div class="home">
+            <a href="{% url 'cv:home' %}">CV APP</a>
+        </div>
+        <nav>
+            <div><a href="{% url 'cv:home' %}">Home</a></div>
+            <div><a href="{% url 'cv:application' %}">Application</a></div>
+        </nav>
+        <div class="log"></div>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

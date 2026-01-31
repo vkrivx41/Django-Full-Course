@@ -1,0 +1,24 @@
+
+# 1. Start a project
+- start the project and automatically create the project folders that are nested
+- django-admin startproject [project name]
+
+# 2. Start an app
+- start an app, and can be moved to any other django project, it contains it's own models, views, tests, and templates
+- must be added to the settings.py in the project directory
+- cd [project name]
+- python manage.py startapp [app name]
+
+# 3. create a view
+- define a view to be render
+- must be in the view.py file in the app directory
+- normall a function that receives one paramater (request -- HttpRequest), can return HTML or HttpResponse
+
+# 4. create a url and render a view
+- define url under a custom file and name the list url patterns
+- the object is named path, and contains three arguments, (the path, url function, name)
+- must be added to the urls.py in the project directory
+
+# 5. run the server
+- run the server to get a url to run it in a browser
+- automatically creates an SQLite db in the main project directory

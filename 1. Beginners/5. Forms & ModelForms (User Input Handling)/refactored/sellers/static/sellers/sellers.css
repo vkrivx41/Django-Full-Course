@@ -1,0 +1,120 @@
+.sellers-page{
+    display: flex;
+}
+
+.sellers-table{
+    width: 70%;
+}
+
+
+.sellers_add{
+    background: rgb(1, 1, 1);
+    width: 30%;
+    border-radius: 4px;
+    padding: 20px 30px;
+    margin-right: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.sellers_add > .header{
+    width: 100%;
+    padding: 7px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+.sellers_add > .add_form{
+    width: 100%;
+    padding: 7px 0;
+}
+
+form > .fields_part{
+    padding: 0 5px;
+}
+
+form > .fields_part > .form-group{
+    width: 100%;
+}
+
+form > .fields_part > .form-group > .label{
+    padding: 5px 0px;
+}
+form > .fields_part > .form-group > .label > label{
+    color: white;
+    font-size: 14px;
+}
+
+form > .fields_part > .form-group > .field{
+    width: 100%;
+}
+
+form > .fields_part > .form-group > .field > input{
+    width: calc(100% - 5px);
+    height: 30px;
+    padding: 0px 3px;
+    border-radius: 4;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+form > .fields_part > .form-group > .field > select{
+    width: 100%;
+    height: 30px;
+    padding: 0px 3px;
+    border-radius: 4;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+
+form > .fields_part > .form-group > .field > #id_categories  div  label{
+    color: white;
+    font-size: 14px;
+}
+
+/* submit */
+form > .submit_part{
+    padding: 5px;
+}
+
+form > .submit_part > button{
+    padding: 9px 14px;
+    border-radius: 4;
+    border: none;
+}
+
+/* errors */
+
+.error-messages{
+    margin: 0;
+    padding: 0;
+}
+.error-messages > ul{
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.error-messages > ul > li{
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    color: red;
+}
+
+
+/* managers */
+
+.field > #id_permissions > div > label{
+    color: white;
+}

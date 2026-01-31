@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/agenda/home.css' %}">
+{% endblock links %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="agendas">
+        {% for agenda in agendas %}
+            <div id="{{ agenda.color }}" class="agenda">
+                <div class="details">
+                    <div class="name">
+                        <span>{{ agenda.name }}</span>
+                        <span>-</span>
+                        {% if agenda.accomplished %}
+                            <span style="color: green">Done</span>
+                        {% else %}
+                            <span>Ongoing</span>
+                        {% endif %}
+                        </span>
+                    </div>
+                    <div class="description">{{ agenda.description }}</div>
+                    <div class="type">Type: <span>{{ agenda.type }}</span></div>
+                    <div class="created_date">Created: {{ agenda.created_at }}</div>
+                    <div class="due_date">Ends: {{ agenda.due_date }}</div>
+                </div>
+                <div class="buttons">
+                    <a href="{% url 'agenda:edit' agenda.id %}">Edit</a>
+                    <a href="{% url 'agenda:delete' agenda.id %}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

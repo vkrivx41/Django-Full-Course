@@ -1,0 +1,7 @@
+
+What is covered in this Chapter (4)
+
+
+- Validate rating field - between 1 and 5 [min and max]
+- Validate latitude and longitude fields
+- Write custom validator functions

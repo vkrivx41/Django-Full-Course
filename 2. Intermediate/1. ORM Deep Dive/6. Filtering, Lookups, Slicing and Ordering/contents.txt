@@ -1,0 +1,9 @@
+
+What is covered in this Chapter (6)
+
+
+- filter and exclude
+- order by
+- exists
+- earliest and latests (datetime fields)
+- lookups [greater, less, exact, in, contains]

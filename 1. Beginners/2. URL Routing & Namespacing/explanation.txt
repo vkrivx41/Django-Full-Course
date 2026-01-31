@@ -1,0 +1,10 @@
+
+1. set namespaces
+- After the urls have been created there is a possibility of url clushing between different application
+- For example: One app might have a url named 'index' and the other one as well.
+- Django will direct all the url to the lastest added one
+
+- To solve this we need to add a namespace (app_name) to every urls.py file of each application
+- This will cease the conflicts and each app will be assigned it's namespace
+
+- This is handy when using urls in HTML templages and redirects

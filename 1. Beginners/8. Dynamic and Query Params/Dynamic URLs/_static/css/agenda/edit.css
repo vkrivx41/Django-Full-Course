@@ -1,0 +1,10 @@
+button#submit{
+    width: 60px;
+}
+
+#div_id_accomplished{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}

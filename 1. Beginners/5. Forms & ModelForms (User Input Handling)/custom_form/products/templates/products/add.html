@@ -1,0 +1,34 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block links %}
+    <title>Sellers</title>
+    <link rel="stylesheet" href={% static "products/add.css" %}>
+{% endblock links %}
+
+{% block content %}
+    <h1 class="page-title">Add Page</h1>
+    <div class="add_form">
+        <form method="post">
+            {% csrf_token %}
+            <div class="fields_part">
+                {% for field in form %}
+                    <div class="form-group">
+                        <div class="label">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        </div>
+                        <div class="field">
+                            {{ field }}
+                        </div>
+                        <div class="error-messages">
+                            {{ field.errors }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="submit_part">
+                <button type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+{% endblock content%}

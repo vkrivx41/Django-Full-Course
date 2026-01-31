@@ -1,0 +1,9 @@
+
+What is covered in this Chapter (3)
+
+
+- Query DB with Django to get database [first, last, all, get, filter, exclude, __methods(contains, icontains, lookups)]
+- Create rows with Django ORM [initialization, .create()]
+- Query Foreign Keys with ORM
+- Updating data in the DB
+- Relationships and Reverse Managers

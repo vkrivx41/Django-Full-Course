@@ -1,0 +1,12 @@
+
+What is covered in this Chapter (10)
+
+
+- normal updating (attribute assignment)
+- attribute assignment with the F expression
+- with the update method
+- bulk_udpate method
+- with filter and lookups
+- with annotations
+- with aggregations
+- refresh_from_db

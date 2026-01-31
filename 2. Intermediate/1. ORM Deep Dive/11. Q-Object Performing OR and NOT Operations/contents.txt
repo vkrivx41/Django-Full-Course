@@ -1,0 +1,9 @@
+
+What is covered in this Chapter (11)
+
+
+- OR Operator (|)
+- NOT Operator (|)
+- Pattern Matching with Regex
+- filter, include and AND Operator (&)
+- prefetch and select related

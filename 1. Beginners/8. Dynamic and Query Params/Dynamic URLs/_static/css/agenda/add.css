@@ -1,0 +1,46 @@
+.add-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-content > .add-header{
+    margin: 10px 0;
+}
+
+.add-content > .add-form{
+    margin: 10px 0;
+}
+
+.add-form > form{
+    width: 300px;
+}
+
+.add-form > form input,
+.add-form > form textarea,
+.add-form > form button,
+.add-form > form select
+{
+    width: 100%;
+    height: 30px;
+    margin: 4px 0;
+    padding: 4px 8px;
+}
+
+.add-form > form textarea{
+    resize: none;
+    height: 105px;
+}
+
+.add-form > form > button{
+    width: 50px;
+    background: black;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.add-form > form > button:hover{
+    cursor: pointer;
+}

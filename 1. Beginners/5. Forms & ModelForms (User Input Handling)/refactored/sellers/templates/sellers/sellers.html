@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block links %}
+    <title>Sellers</title>
+    <link rel="stylesheet" href={% static "sellers/sellers.css" %}>
+{% endblock links %}
+
+{% block content %}
+    <h1 class="page-title">Sellers Page</h1>
+    <div class="sellers-page">
+        <div class="sellers-table">
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Product Categories</th>
+                        <th>Profit</th>
+                        <th>Contract</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for seller in sellers %}
+                        <tr>
+                            <td>{{ seller.username }}</td>
+                            <td>{{ seller.email }}</td>
+                            <td>{{ seller.phone_number }}</td>
+                            <td>{{ seller.categories }}</td>
+                            <td>{{ seller.profit }}</td>
+                            <td>{{ seller.contract }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="sellers_add">
+            <div class="header">Add new seller</div>
+            <div class="add_form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="fields_part">
+                        {% for field in form %}
+                            <div class="form-group">
+                                <div class="label">
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                </div>
+                                <div class="field">
+                                    {{ field }}
+                                </div>
+                                <div class="error-messages">
+                                    {{ field.errors }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="submit_part">
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content%}

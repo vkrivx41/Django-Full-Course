@@ -1,0 +1,27 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'store/main.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <h1>Home</h1>
+    <div class="message">
+        {% if messages %}
+            {% for message in messages %}
+                <em>{{ message }}</em>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="products">
+        {% for product in products %}
+            <div class="product">
+                <div>Name: {{ product.product_name }}</div>
+                <div>Category: {{ product.product_category }}</div>
+                <div>Price: {{ product.product_price }} $</div>
+                <div>Warrant: {{ product.warrant_months }} Months</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

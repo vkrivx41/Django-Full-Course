@@ -1,0 +1,41 @@
+.content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.submission_content{
+    background: red;
+    padding: 10px;
+    margin: 50px 0;
+    width: 500px;
+}
+
+form > div{
+    padding: 7px 0;
+}
+
+form div > div > input{
+    padding: 10px 5px;
+    width: 90%;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+form div > div > select{
+    padding: 10px 5px;
+    width: 90%;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+form > button{
+    padding: 10px 5px;
+    width: 60px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+}

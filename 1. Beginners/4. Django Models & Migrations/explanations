@@ -1,0 +1,17 @@
+
+models and migrations
+	- create a model
+	- make migrations
+	- the SQL query
+	- migrate
+	- run queries via the shell
+		- all, first/last, filter
+		- attributes: id, pk
+		- get
+	- run inserts
+	- foreign keys
+	- foreign sets [query (select - all), insert]
+	- delete
+	- update (.dot method)
+	- work in code
+	- register to Django Admin
