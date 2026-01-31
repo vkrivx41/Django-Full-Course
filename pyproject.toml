@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "django-full-course"
+version = "0.1.0"
+description = "A package containing all Django 6 Courses from Beginners to Advanced"
+authors = ["Pascal Le Grand <vkrivx41@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^6.0.1"
+python-decouple = "^3.8"
+django-extensions = "^4.1"
+django-debug-toolbar = "^6.2.0"
+pillow = "^12.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
