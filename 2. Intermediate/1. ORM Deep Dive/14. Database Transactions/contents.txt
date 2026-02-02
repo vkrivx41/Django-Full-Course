@@ -1,0 +1,7 @@
+
+What is covered in this Chapter (13)
+
+
+- Subquery -> creates a nested query that return either one or more values
+- OuterRef -> refers to the value in any outer query
+- Exists -> Boolean check that return True or False, depending on the condition

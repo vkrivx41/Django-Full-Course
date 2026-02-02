@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for job in jobs %}
+    <p>{{ job.restaurant.name }} - {{ job.staff.name }}</p>
+{% endfor %}
+
+{% endblock content %}
