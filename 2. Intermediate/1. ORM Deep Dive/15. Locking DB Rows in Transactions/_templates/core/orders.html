@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Orders</h1>
+{% for order in orders %}
+    <p>{{ order.number_of_items }} - {{ order.product.name }}</p>
+{% endfor %}
+
+{% endblock content %}
