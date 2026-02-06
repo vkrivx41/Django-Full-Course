@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sellers List</h1>
+    <ul>
+        {% for seller in sellers %}
+            <li>
+                <a href="{{ seller.get_absolute_url }}">{{ seller.name }}</a>
+                <span>Has {{ seller.products.count }} products</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="paginator">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+        {% endif %}
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>
