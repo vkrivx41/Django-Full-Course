@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="{% url 'products:home' %}">Home</a>
+        <a href="{% url 'products:create_product' %}">Create New</a>
+    </div>
+    <h1>Product Detail</h1>
+    <h3>Name: {{ product.name }}</h3>
+    <h4>Category: {{ product.category }}</h4>
+
+    <div class="edit">
+        <a href="{% url 'products:update_product' product.id %}">Update</a>
+    </div>
+</body>
+</html>
