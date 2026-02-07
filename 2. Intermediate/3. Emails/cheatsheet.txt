@@ -1,0 +1,8 @@
+Emails
+
+- Sending emails to the Console
+- Sending raw text emails using Gmail SMTP
+- Sending html emails using Gmail SMTP
+	- include adding context data
+	- simple CSS styles
+	- links

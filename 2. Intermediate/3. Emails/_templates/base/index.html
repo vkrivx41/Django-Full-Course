@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Products List</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <b>{{ message }}</b>
+        {% endfor %}
+    {% endif %}
+    <div class="create">
+        <a href="{% url 'products:create_product' %}">Create New Product</a>
+    </div>
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a> By - 
+                <span>{{ product.seller.name }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="paginator">
+        {% if paginator.has_previous %}
+            <a href="?page={{ paginator.previous_page_number }}">Prev</a>
+        {% endif %}
+        <span class="current">
+            Page {{ page }} of {{ paginator.paginator.num_pages }}
+        </span>
+        {% if paginator.has_next %}
+            <a href="?page={{ paginator.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>
