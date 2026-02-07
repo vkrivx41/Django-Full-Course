@@ -1,0 +1,32 @@
+
+CBV Table of Contents
+
+Concerns
+  - Form Handling
+  - Pagination
+  - Handling post and files data
+  - Handling the N+1 problem with prefetch and select related
+  - Handling ordering and slicing
+  - Handling other function call (for validation, email sending and more)
+  - Handling DB transactions (wrap queries into transactions)
+  - Handling redirects
+  - Handling messages (contrib.messages) and cookies
+
+
+- View
+- TemplateView
+- ListView
+- DetailView
+- FormView
+	- UpdateView
+	- CreateView
+- DeleteView
+
+
+dispatch()           → routing HTTP methods
+get_queryset()       → DB logic
+get_context_data()   → template data
+form_valid()         → business logic
+get_success_url()    → redirects
+
+

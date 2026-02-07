@@ -29,6 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Enables the contrib.sites to work and return the correct protocol
+SITE_ID = 1
+SITE_PROTOCOL = 'http' if DEBUG else 'https'
+
 # Allow Debug Toolbar
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -38,6 +42,7 @@ INTERNAL_IPS = [
 INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

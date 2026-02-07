@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
-from decouple import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +33,7 @@ INTERNAL_IPS = [
 ]
 
 # Application definition
+
 INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
@@ -60,7 +59,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'store.urls'
 
-TEMPLATES_DIR = BASE_DIR / '_templates'
+TEMPLATES_DIR = BASE_DIR / 'templates'
 
 TEMPLATES = [
     {
@@ -115,8 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Africa/Kigali'
-
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -127,15 +125,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = "noreply@admin.com"
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False  # close because TLS is already in use
-
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_APP_PASSWORD')

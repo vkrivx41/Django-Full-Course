@@ -1,0 +1,9 @@
+Signals
+
+- pre_save -> set the slug (product)
+- post_save -> send emails (order)
+
+- pre_delete -> perform backup (product)
+- post_delete -> send emails (product)
+
+- config sites and add sites

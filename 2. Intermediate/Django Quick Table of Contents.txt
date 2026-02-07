@@ -1,0 +1,23 @@
+Django Quick Table of Contents
+
+
+A. Intermediate
+
+1. CBVs - ✅
+2. Emails - ✅
+3. Signals - ✅
+4. REST APIs with DRF and JWT
+5. File Uploads with s3
+6. Authentication and Authorization (Permissions and Groups)
+7. Caching with Redis
+
+
+
+B. Advanced
+
+1. Websockets with Django Channels
+2. Scheduling Tasks with Celery (CRON Jobs)
+3. Unit & Integration Testing
+4. Deployment (Gunicorn, Nginx, Docker, CI/CD Pipelines)
+5. Authentication With React Js
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Orders List</h1>
+    <div>
+        <a href="{% url 'products:home' %}">Order Again</a>
+    </div>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <b>{{ message }}</b>
+        {% endfor %}
+    {% endif %}
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Buyer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        {% for order in orders %}
+           <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.buyer }}</td>
+                <td>{{ order.product.name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.cost_price }}</td>
+           </tr>
+        {% endfor %}
+    </table>
+    <div class="paginator">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+        {% endif %}
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>
