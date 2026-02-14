@@ -1,0 +1,113 @@
+DRF Lessons
+
+
+Learn Later
+  1. (15) drf-spectacular - for API documentation
+  2. (18) Writing Filter Backends
+
+1. Setup and Models ✅
+	- install the packages (djangorestframework)
+	- add it to installed apps
+	- create models
+
+2. Serializers and Response Objects ✅
+	- Model Serializer -> a serializer tied to a model (adding fields and validations)
+	- rendering the data at JSON -> using FBVs and return JSONResponse
+	- api_view decorator -> setting allowed HTTP method as a decorator on the FBV
+	- Response Object -> replace the JSON one
+
+3. Nested Serializers, SerializerMethodField and Serializer Relations ✅
+	- Nested Serializer -> return foreign key models and their fields (show primary keys, show all fields)
+	- Serializer Method Fields -> add misc data to the serializer by calling a get_<attribute> method or method_name arg
+	- Serializer Fields -> using source to flatten data
+	- Other types of related serializer -> Primary, Slug, String, Hyperlink
+
+4. Serializer subclasses and Aggregated API data ✅
+	- Serializers not tied to models -> Used for aggregations and info rendering
+
+5. django-silk for Profiling and Optimization ✅
+	- django-silk configuration
+	- optimization with prefetch and select related
+
+6. Generic Views ListAPIView & RetrieveAPIView ✅
+	- ListAPIView
+	- RetrieveAPIView
+	  - lookup field
+	  - lookup url kwargs
+
+7. Dynamic Filtering Overriding get_queryset() method ✅
+	- TabularInline -> configuring inline models to Django admin
+	- dynamic filtering -> customizing the get_queryset method
+
+8. Permissions and Testing Permissions ✅
+	- adding authentication -> using the permission classes to the API CBV [IsAuthenticated]
+	- running tests for authentication -> handling both authenticated and unauthenticated permissions
+
+9. APIView class ✅
+	- re-writing http methods -> using method like get, post, or delete no linked to a particular model
+
+10. Creating Data  ListCreateAPIView and Generic View Internals ✅
+	- CreateAPIView -> for data creation and overriding the create() method
+	- ListCreateAPIView -> list and create at once
+
+
+
+Learn Now   -> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 26
+Learn Later -> 15, 18, 20, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32 
+----------------------------------------------------------------------------------------
+
+
+11. Customising permissions in Generic Views  VSCode REST Client extension ✅
+	- overwrite get_permissions -> setting permissions on GET and POST requests separately
+	- AllowAny and AdminUser permissions
+
+12. JWT Authentication with djangorestframework-simplejwt ✅
+	- configuring simple-jwt -> set url and settings for the REST framework
+	- getting the access and refresh tokens
+	- http errors for JWT authentication
+
+13. Refresh Tokens & JWT Authentication ✅
+	- obtaining a new access token using the refresh token
+	- customizing settings for simple-jwt (access and refresh token lifetime)
+
+14. Updating & Deleting data✅
+	- UpdateAPIView -> updating an object in the database (PUT, PATCH)
+	- DestroyAPIView -> deleting a resource (DELETE)
+	- Composite Views -> RetrieveUpdateAPIView, RetrieveDestroyAPIView, RetrieveUpdateDestroyAPIView
+	- setting permissions -> customizing the get_permissions method
+
+15. drf-spectacular - Django REST Framework API Documentation
+
+16. django-filter and DRF API filtering ✅
+	- django-filter -> installation and configuration
+	- filterset fields -> setting fields to perform quality (==) filtering with
+	- filter sets -> creating filtersets, configurations (class meta configurations of model and fields)
+	- filterset class -> setting a filter set class, adding lookups as dictionaries to a filter set class
+
+17. SearchFilter and OrderingFilter ✅
+	- search fields -> setting search fields on the API View (can include foreign key lookups)
+	- filter backends -> setting filter backends, search and order filters
+	- ordering fields -> setting order fields on the API View
+
+18. Writing Filter Backends
+
+19. Pagination with PageNumberPagination & LimitOffsetPagination ✅
+	- pagination configuration -> config which type of pagination and page size to use in the settings
+	- pagination class -> setting the pagination class and also the 
+		- page size
+		- page query param
+		- page size query param
+		- max page size
+	- setting default ordering -> setting order_by to pk as id to avoid ordering warnings
+	- limit offset paginations -> settings and working
+
+20. Viewsets & Routers
+	- Model Viewset - setting the queryset, serializer and permission clasess
+	- Routers -> creating a Default Router, registering routes and adding them to the url patterns
+
+
+26. Caching with Redis and Django
+	- redis -> installation and configuration
+	- django-redis -> installation and configuration
+	- caching -> method decorators and caching pages with cache page decorator
+	- cache invalidation -> invalidating caches with signals
