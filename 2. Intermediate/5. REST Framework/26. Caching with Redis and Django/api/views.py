@@ -1,4 +1,6 @@
 from django.db.models import Avg
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 from rest_framework import generics
 from rest_framework import filters
@@ -8,6 +10,8 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
 
 from django_filters.rest_framework import DjangoFilterBackend
+
+import time
 
 from api.filters import ProductFilter
 from api.serializers import ProductSerializer, OrderSerializer, ProductsInfoSerializer
@@ -27,17 +31,16 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
     ordering_fields = ['name', 'price', 'stock']
     # filterset_fields = ('name', 'price')  # put in a FilterSet class as fields
 
-    pagination_class = PageNumberPagination
-    pagination_class.page_size = 3
-    pagination_class.page_query_param = 'pagenum'
-    pagination_class.page_size_query_param = 'length'  # param for setting the page size (no. of results)
-    pagination_class.max_page_size = 10  # the max size of the page (size query param can't override this)
+    pagination_class = None
 
-    # set for the LimitOffsetPagination
-    # pagination_class.default_limit = 3  # the size of the page
-    # pagination_class.limit_query_param = 'size'
-
-
+    @method_decorator(cache_page(60 * 15, key_prefix="product_list"))
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+    
+    def get_queryset(self):
+        time.sleep(2)  # simulate a DB query delay
+        return super().get_queryset()
+    
     def get_permissions(self):
         """
         Overridding the get_permissions method to set admin authorization for POST requests
