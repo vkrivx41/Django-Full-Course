@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <h1>Let's Chat</h1>
+
+    <form id="form">
+        <input type="text" name="message">
+    </form>
+
+    <div id="messages"></div>
+
+    <script>
+        let url = `ws://${window.location.host}/ws/socket-server/`
+
+        const chatSocket = new WebSocket(url)
+        
+        chatSocket.onmessage = (e) =>{
+            let data = JSON.parse(e.data)
+            console.log ("Data: ", data);
+
+            if (data.type == 'chat'){
+                const messages = document.getElementById("messages")
+                let message_template = `<div>${data.message}<div/>`
+
+                messages.insertAdjacentHTML('beforeend', message_template)
+            }
+        }
+
+        chatSocket.onclose = (e) => {
+            console.log (`Connection Closed`);
+        }
+
+        
+        const form = document.getElementById("form")
+        form.addEventListener("submit", (e) =>{
+            e.preventDefault()
+
+            message = e.target.message.value
+
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }))
+
+            form.reset()
+        })
+
+    </script>
+</body>
+</html>
