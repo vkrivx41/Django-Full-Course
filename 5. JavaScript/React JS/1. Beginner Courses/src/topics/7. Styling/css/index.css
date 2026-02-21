@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    background: hsl(195, 100%, 94%);
+}
+
+.card {
+    color: lightblue;
+    background-color: darkblue;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    width: 300px;
+  }
+
+.card > .title {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+  }
