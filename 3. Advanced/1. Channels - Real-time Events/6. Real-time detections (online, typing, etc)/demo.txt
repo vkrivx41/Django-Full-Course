@@ -1,0 +1,20 @@
+--- Typing Indicator Algorithms
+
+Rules:
+  - Send every 500ms using debounce
+  - Only the relevant user will receiver the signal
+
+Pseudo
+  - Set an onchange event-listener on the message input
+  - Use debounce to send the signal after a timeout of 5secs
+    - receive the signal
+    - create a timeout of 500ms and send the signal inside that time
+    - if there is an on going timeout then clear it 
+
+  - Receive the signal in the consumer with the appropriate details (sender, room, type) and then transmit the info to the receiver
+  - On the receivers side, if the room is open, open a message div displaying the text typing...
+
+
+--- Handling Attachments
+Video, Image, and Audio
+

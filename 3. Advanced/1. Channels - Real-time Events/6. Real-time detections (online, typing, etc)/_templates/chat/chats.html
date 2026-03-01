@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Chats
+{% endblock title %}
+
+{% block content %}
+    <h1>Chats</h1>
+    <div class="chat-container">
+        <div class="chats">
+        </div>
+        <div class="message-content">
+            <div class="message-content-default">
+                Click someone on the left to start a chat.
+            </div>
+            <div class="previous-messages">
+                <div class="message">
+                </div>
+            </div>
+            <div class="message-input">
+                <form method="post" id="message-form">
+                    {% csrf_token %}
+                    <input type="text" name="message" id="message">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

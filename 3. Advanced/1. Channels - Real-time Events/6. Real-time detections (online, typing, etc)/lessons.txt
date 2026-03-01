@@ -1,0 +1,31 @@
+
+
+Lessons
+
+1. Working with redis
+  - installation
+  - configuration and running
+  - keys for str and ints, lists, sets, CRUD, sorting, lookups, increm and decrem
+  - working with redis in python
+    - create an instance
+    - run the build in method
+    - execute_command and the SMISMEMBER commands
+    - pipeline and executing them
+
+2. Django Channels
+  - configuration and setup (asgi, settings)
+  - creating consumers and routing
+  - db operations in consumers
+  - groups and channel layers
+  - events
+  - sync to async methods and calling them
+  - sending and receiving messages
+
+3. ORM
+  - deep dive into the prefetch_related and Prefetch object
+  - deep dive into the OuterRef and Subquery methods
+
+4. JavaScript Websockets
+ - creation and configuration
+ - handling events, on message, error, and sending
+ 

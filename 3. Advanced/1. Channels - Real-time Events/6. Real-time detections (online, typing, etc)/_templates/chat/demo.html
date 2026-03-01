@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <ul class="user-list">
+        {% for room in rooms %}
+            <li>
+                <span>{{ room.receiver }}</span>
+                <button id="create_room" room="{{ room.room_name }}" sender="{{ user.username }}" onclick="createRoom(event)">
+                    Chat
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form method="post" id="form">
+        <input type="text" name="message" id="message">
+    </form>
+
+    <div id="messages"></div>
+
+    <script>
+
+        form = document.getElementById("form")
+
+        document.addEventListener('DOMContentLoaded', (e) => {
+            form.style.display = 'none'
+        })
+
+        function createRoom(e){
+
+            const chatButton = event.target
+            const room = chatButton.getAttribute("room")
+            const sender = chatButton.getAttribute("sender")
+
+            let url = `ws://${window.location.host}/ws/socket-server/?room=${room}`
+
+            const chatSocket = new WebSocket(url)
+
+            const messages_div = document.getElementById("messages")
+
+            chatSocket.onmessage = (e) => {
+                const data = JSON.parse(e.data)
+                
+                if (data.type == 'connections.established'){
+                    form.style.display = 'block'
+
+                    const previous_messages = JSON.parse(data.messages)
+
+                    previous_messages.forEach(prev_msg => {
+                        let message_template = `<div><b>${prev_msg.fields.sender}</b> - ${prev_msg.fields.content}<div/>`
+                        messages_div.insertAdjacentHTML('beforeend', message_template)
+                    });
+                }
+
+                if (data.type == 'chat'){
+                    let message_template = `<div><b>${data.sender}</b> - ${data.message}<div/>`
+
+                    messages_div.insertAdjacentHTML('beforeend', message_template)
+                }
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+
+                message = e.target.message.value
+
+                chatSocket.send(JSON.stringify({
+                    'message': message,
+                    'room': room,
+                    'sender': sender,
+                }))
+
+                form.reset()
+            })
+        }
+
+    </script>
+</body>
+</html>
+
