@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <h1>Let's Chat</h1>
+
+    <form id="form">
+        <input type="hidden" name="room" value="{{ room }}" id="room">
+        <input type="text" name="message">
+    </form>
+
+    <div id="messages"></div>
+
+    <script>
+        let room = document.getElementById("room").value
+        let url = `ws://${window.location.host}/ws/socket-server/?room=${room}`
+
+        const chatSocket = new WebSocket(url)
+        
+        chatSocket.onmessage = (e) =>{
+            let data = JSON.parse(e.data)
+            const messages_div = document.getElementById("messages")
+
+            console.log ("Data: ", data);
+            
+            if (data.messages != undefined){
+                messages = JSON.parse(data.messages)
+
+                messages.forEach(message => {
+                let message_template = `<div>${message.content}<div/>`
+
+                messages_div.insertAdjacentHTML('beforeend', message_template)
+                });
+            }
+            
+
+            if (data.type == 'chat'){
+                let message_template = `<div>${data.message}<div/>`
+
+                messages_div.insertAdjacentHTML('beforeend', message_template)
+            }
+        }
+
+        chatSocket.onclose = (e) => {
+            console.log (`Connection Closed`);
+        }
+
+        
+        const form = document.getElementById("form")
+        form.addEventListener("submit", (e) =>{
+            e.preventDefault()
+
+            message = e.target.message.value
+            room = e.target.room.value
+
+            chatSocket.send(JSON.stringify({
+                'message': message,
+                'time': (new Date()).toDateString(),
+                'room': room,
+            }))
+
+            form.reset()
+        })
+
+    </script>
+</body>
+</html>

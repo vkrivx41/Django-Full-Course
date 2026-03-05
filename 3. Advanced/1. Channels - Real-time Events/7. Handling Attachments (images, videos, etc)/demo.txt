@@ -1,0 +1,37 @@
+--- Handling Attachments
+Video, Image, and Audio
+
+1. Save them locally first
+
+- select one file (Image, video, Audio)
+- send it as a message, the actual text message can be empty for now
+- receive it, save it, the content as None but add an attachment field, that is a file field
+- then transmit the message, once received check the type if it contains an attachment, decode the attachment and display it
+
+
+To-do
+1. Refactor the code
+2. Use Cloudfront
+
+Use
+1. AWS S3 storage and Presigned POST urls and send using the frontend
+2. Switch to Cloudfront Presigned urls
+
+
+Extra:
+1. S3 multipart upload for 1GB+ files
+2. Virus scanning
+3. How to cancel uploads cleanly
+4. How to auto-delete orphaned uploads
+5. How to make file download private with expiring GET links
+
+Extra:
+1. Upload cancel
+2. Retry logic
+3. Chunked uploads for large files
+4. Parallel uploads
+
+Video Loading
+1. Chunk Streaming - ownload 2 seconds → play immediately
+2. Adaptive Bitrate - Player switches quality instantly.
+3. Parallel Requests - Browser downloads multiple chunks simultaneously.

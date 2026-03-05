@@ -1,0 +1,248 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body, html{
+    background: hsl(0, 0%, 73%);
+    font-family: sans-serif;
+}
+
+:root{
+    --chat-container-height: 500px;
+    --message-input-height: 40px;
+    --chat-padding: 10px;
+}
+
+
+h1{
+    margin: 10px;
+}
+
+.chat-container{
+    width: 800px;
+    height: var(--chat-container-height);
+    margin: 10px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-container > div{
+    height: var(--chat-container-height);
+    flex-basis: 50%;
+}
+
+.chat-container > .chats{
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-container > .chats > .chat-content{
+    height: 40px;
+    width: 100%;
+    padding: 2px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+
+.chat-container > .chats > .chat-content.active{
+    background: hsl(0, 0%, 85%);
+}
+
+.chat-container > .chats > .chat-content:hover{
+    background: hsl(0, 0%, 90%);
+    cursor: pointer;
+    transition: background 500ms ease-in-out;
+}
+
+.chats > .chat-content > .user-name{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    /* background: blue; */
+}
+
+.chats > .chat-content > .online-indicator{
+    width: 13px;
+    height: 12px;
+    border-radius: 100%;
+    background: gray;
+
+}
+
+.chats > .chat-content > .online-indicator.inactive{
+    background: gray;
+}
+
+.chats > .chat-content > .online-indicator.active{
+    background: green;
+}
+
+.chats > .chat-content > .unread-messages{
+    background: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    padding: 3px;
+    border-radius: 100px;
+    font-weight: 550;
+}
+
+
+.chat-container > .message-content{
+    background: hsl(0, 6%, 94%);
+}
+
+
+.message-content > .message-content-default{
+    font-size: 24px;
+    width: 80%;
+    margin: 50% auto;
+    text-align: center;
+
+}
+
+.message-content > .message-content-default.close{
+    display: none;
+}
+
+.message-content > .previous-messages{
+    display: none;
+}
+
+.message-content > .previous-messages.open{
+    display: block;
+    width: 100%;
+    height: calc(100% - var(--message-input-height) - 4px);
+    overflow-y: auto;
+}
+
+.previous-messages > .message{
+    width: 100%;
+    margin: 5px 0;
+    padding: 2px var(--chat-padding);
+}
+
+.message > .message-body{
+    background: hsl(0, 0%, 60%);
+    padding: var(--chat-padding);
+    width: 60%;
+}
+
+.message > .message-body > img, .message > .message-body > video{
+    width: 100%;
+    height: 200px;
+}
+
+.message > .message-body > audio{
+    width: 100%;
+    height: 50px;
+}
+
+.message > .message-body.right{
+    background: hsl(0, 0%, 50%);
+    margin-left: auto;
+}
+
+.progress-bar.active{
+    width: 100%;
+    height: 4px;
+    background: rgb(209, 255, 232);
+}
+
+.progress-bar > .complete-bar{
+    height: 100%;
+    background: green;
+    border-radius: 20px;
+    width: 0%;
+}
+
+.message-content > .message-input{
+    display: none;
+}
+
+.message-content > .message-input.open{
+    width: 100%;
+    height: var(--message-input-height);
+    display: flex;
+    align-items: center;
+    border-top: 1px solid black;
+}
+
+.message-input > form{
+    height: var(--message-input-height);
+    width: 100%;
+    padding: 0 var(--chat-padding);
+    display: flex;
+    align-items: center;
+}
+
+form > *{
+    height: 80%;
+}
+
+form > button{
+    background: green;
+    font-weight: 550;
+    margin-left: 10px;
+    color: white;
+    padding: 2px 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+form > #message{
+    padding: 2px 8px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid black;
+}
+
+form > #message:focus{
+    border: 2px solid black;
+}
+
+form > #attachment{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+form > #attachment-label{
+    width: 50px;
+    font-size: 20px;
+    background: hsl(0, 0%, 50%);
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form > #attachment-label.active{
+    border: 3px solid green;
+}
+
+form > #attachment-label:hover{
+    background: hsl(120, 0%, 55%);
+    cursor: pointer;
+}
+
+.demo{
+    color: #bebebe;
+}
