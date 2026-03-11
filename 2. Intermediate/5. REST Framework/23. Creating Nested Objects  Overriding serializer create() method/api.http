@@ -1,0 +1,105 @@
+
+###
+GET http://localhost:8000/products/ HTTP/1.1
+
+###
+GET http://localhost:8000/products/12/ HTTP/1.1
+
+###
+PATCH http://localhost:8000/products/12/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwODc1ODAwLCJpYXQiOjE3NzA4NzU1MDAsImp0aSI6IjEzYjBlYzRiZDI2MDRhNjA4ZjkyM2RmMzMwM2VjZmM2IiwidXNlcl9pZCI6IjEifQ.UX-Ea_D7Mn94cmbvH7PonxE3n8eUccjcmfx-reCJnlQ
+
+{
+  "name": "Tongkat Ali Tea",
+  "stock": 12
+}
+
+
+###
+DELETE http://localhost:8000/products/12/ HTTP/1.1
+
+
+###
+POST http://localhost:8000/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwODc2NTM2LCJpYXQiOjE3NzA4NzYyMzcsImp0aSI6IjUxZjcwNWM2ZDQ2MDQ3NGNiN2UzZDNjZGYxZTA3OWU4IiwidXNlcl9pZCI6IjEifQ.DPlnVOX3wpIX6xfc8Gc0-tt6yanx38peWP4Jn2HP324
+
+{
+    "name": "Television",
+    "price": 200.0,
+    "stock": 5,
+    "description": "An amazing Television"
+}
+
+
+###
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "vkriv",
+    "password": "testing321"
+}
+
+###
+POST http://localhost:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MDk2MTI2NiwiaWF0IjoxNzcwODc0ODY2LCJqdGkiOiI0YTc4ODY1Zjg4MmE0NzE4YWI3M2UzMjIxODNiNjQ0ZCIsInVzZXJfaWQiOiIxIn0.dxR4QJ-5ai06XPHGHt0CVGkXe1Dk3lv_hPuyWkILPoE"
+}
+
+
+###
+GET http://localhost:8000/user-orders/ HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwODc0NTg0LCJpYXQiOjE3NzA4NzQyODQsImp0aSI6ImQ3Mjg4NjQ3M2E4YzQ4NTViYWQ0NmQ4NDljOGUwNjEwIiwidXNlcl9pZCI6IjIifQ.f93Fbf381OY8y71-Sb0vbKhZgCw5rOxyIKeAOi86zc0
+
+###
+
+PUT http://localhost:8000/products/update/1/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwODc0NjY0LCJpYXQiOjE3NzA4NzQzNjQsImp0aSI6ImYyYjRhNTcwZTQxMTRmMWRiNjc5ZGZlN2Y4NGJiMDkxIiwidXNlcl9pZCI6IjEifQ.0Wa-YyeiAtZ7LE8t9YCQMpEfhK_oBmI6zHXKWRe4kbg
+
+{
+    "name": "A Scanner Darkly",
+    "description": "Nulla molestias distinctio quas voluptatum soluta, nesciunt vitae dolorem quo quos? Facere excepturi voluptatum quibusdam quo minima, minima voluptatum sapiente aperiam veritatis saepe sequi, non animi officiis, ipsum iure voluptatem ratione consequatur aliquam dolores nihil in?",
+    "price": "12.99",
+    "stock": 9
+}
+
+###
+PATCH http://localhost:8000/products/update/1/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwODc0NjY0LCJpYXQiOjE3NzA4NzQzNjQsImp0aSI6ImYyYjRhNTcwZTQxMTRmMWRiNjc5ZGZlN2Y4NGJiMDkxIiwidXNlcl9pZCI6IjEifQ.0Wa-YyeiAtZ7LE8t9YCQMpEfhK_oBmI6zHXKWRe4kbg
+
+{
+    "name": "A Scanner Darkly",
+    "stock": 19
+}
+
+
+###
+DELETE http://localhost:8000/products/delete/13/ HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwODc1MTY2LCJpYXQiOjE3NzA4NzQ4NjYsImp0aSI6ImQ1YjYxYzE2OWNkMTRmMTQ4MTE1YWM1Y2QyZDRlZWJkIiwidXNlcl9pZCI6IjEifQ.RgEvjloMFZotqZI2kCZl5oWs_UCizmDx7RAVJR3EQo8
+
+
+### 
+GET http://localhost:8000/orders/c06d90d2-9053-4adc-ab34-05afdd818944/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczMjY0NDEwLCJpYXQiOjE3NzMyNDI4MTAsImp0aSI6ImQyZDExZWIwZWJmZDQzY2E5NGMzODJmMjU2MWJkOTE0IiwidXNlcl9pZCI6IjMifQ.D0xdfgDTKr2ObyYyJBLPbn1c06wMCzxFpoH_eKba69c
+
+### 
+POST http://localhost:8000/orders/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczMjY0NDEwLCJpYXQiOjE3NzMyNDI4MTAsImp0aSI6ImQyZDExZWIwZWJmZDQzY2E5NGMzODJmMjU2MWJkOTE0IiwidXNlcl9pZCI6IjMifQ.D0xdfgDTKr2ObyYyJBLPbn1c06wMCzxFpoH_eKba69c
+
+{
+    "status": "Cancelled",
+    "items": [
+        {
+            "product": 2,
+            "quantity": 1
+        }
+    ]
+}
