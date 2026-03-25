@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ document.title }}</h1>
+    <p>{{ document.content }}</p>
+
+    <div>
+        <em>Created At: {{ document.created_at }}</em>
+    </div>
+    <div>
+        <a href="{% url 'document:list' %}">Back to List</a>
+    </div>
+{% endblock content %}

@@ -1,0 +1,18 @@
+
+POST http://localhost:8000/api/token/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin321"
+}
+
+###
+
+POST http://localhost:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MTMyNDM4MSwiaWF0IjoxNzcxMjM3OTgxLCJqdGkiOiI2ZTYzMWYyNGUzOTM0ZjUzODRjNjMzMjJmNGI1ZThmMSIsInVzZXJfaWQiOiIxIn0.3czLkHRiqJYXj_WwXGMA_4sO8ozbDfnHgiMq0nhxRPI"
+}
+

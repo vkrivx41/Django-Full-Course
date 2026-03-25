@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permissions and Groups</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="{% url 'document:list' %}">Documents</a>
+        <a href="{% url 'document:logout' %}">Logout</a>
+    </div>
+    <hr>
+    <div class="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

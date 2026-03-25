@@ -7,7 +7,7 @@ class RedisClient:
     CONNETIONS_KEY = "connections:user_{user_id}"
     ONLINE_KEY = "online:user_{user_id}"
 
-    TTL = 20  # 60 seconds to expire
+    TTL = 20  # 20 seconds to expire
 
     def __init__(self, host_name: str, port: int, db_number: int):
         self.redis_client = redis.Redis(

@@ -11,7 +11,7 @@ const ToDoList = () => {
     e.preventDefault()
 
     if (todoName === "") return
-    
+
     setTodos(prevTodos => {
         const items = [...prevTodos, {
             'name': todoName,

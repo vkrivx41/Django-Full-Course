@@ -1,34 +1,33 @@
-[tool.poetry]
-name = "django-full-course"
+[project]
+name = "7-web-development"
 version = "0.1.0"
 description = "A package containing all Django 6 Courses from Beginners to Advanced"
-authors = ["Pascal Le Grand <vkrivx41@gmail.com>"]
-readme = "README.md"
+authors = [
+    {name = "Pasxal Le Grand",email = "vkrivx41@gmail.com"}
+]
+requires-python = ">=3.12,<4"
+dependencies = [
+    "redis (>=7.2.1,<8.0.0)",
+    "celery (>=5.6.2,<6.0.0)",
+    "django (>=6.0.3,<7.0.0)",
+    "django-environ (>=0.13.0,<0.14.0)",
+    "channels[daphne] (>=4.3.2,<5.0.0)",
+    "django-debug-toolbar (>=6.2.0,<7.0.0)",
+    "django-extensions (>=4.1,<5.0)",
+    "boto3 (>=1.42.64,<2.0.0)",
+    "django-storages (>=1.14.6,<2.0.0)",
+    "django-restframework (>=0.0.1,<0.0.2)",
+    "django-rest-framework (>=0.1.0,<0.2.0)",
+    "django-silk (>=5.5.0,<6.0.0)",
+    "django-filter (>=25.2,<26.0)",
+    "djangorestframework-simplejwt (>=5.5.1,<6.0.0)",
+    "pillow (>=12.1.1,<13.0.0)",
+    "django-cors-headers (>=4.9.0,<5.0.0)",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-django = "^6.0.1"
-python-decouple = "^3.8"
-django-extensions = "^4.1"
-django-debug-toolbar = "^6.2.0"
-pillow = "^12.1.0"
-psycopg2-binary = "^2.9.11"
-djangorestframework = "^3.16.1"
-djangorestframework-jwt = "^1.11.0"
-requests = "^2.32.5"
-django-silk = "^5.4.3"
-djangorestframework-simplejwt = "^5.5.1"
-django-filter = "^25.2"
-django-crispy-forms = "^2.5"
-boto3 = "^1.42.48"
-django-storages = "^1.14.6"
-django-cleanup = "^9.0.0"
-crispy-bootstrap4 = "^2026.2"
-django-environ = "^0.12.1"
-rsa = "^4.9.1"
-cryptography = "^46.0.5"
-
+[tool.poetry]
+packages = [{include = "7"}]
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"

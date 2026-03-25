@@ -24,8 +24,14 @@ Lessons
 3. ORM
   - deep dive into the prefetch_related and Prefetch object
   - deep dive into the OuterRef and Subquery methods
+  - touch on DRF (serializers (method fields) and views - perform create method)
 
 4. JavaScript Websockets
  - creation and configuration
  - handling events, on message, error, and sending
+ - XMLHttpRequest and tracking progress
  
+5. Amazon s3
+ - s3 setup (bucket creation, cloudfront distribution setup)
+ - installation and configuration in Django
+ - presigned post url and cloudfront presigned download url

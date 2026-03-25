@@ -23,7 +23,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         )
 
     async def receive(self, text_data):
-        await asyncio.sleep(5)
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
 

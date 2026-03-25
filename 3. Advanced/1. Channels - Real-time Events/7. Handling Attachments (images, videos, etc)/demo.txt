@@ -32,6 +32,6 @@ Extra:
 4. Parallel uploads
 
 Video Loading
-1. Chunk Streaming - ownload 2 seconds → play immediately
+1. Chunk Streaming - download 2 seconds → play immediately
 2. Adaptive Bitrate - Player switches quality instantly.
 3. Parallel Requests - Browser downloads multiple chunks simultaneously.

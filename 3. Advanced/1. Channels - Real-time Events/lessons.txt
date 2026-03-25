@@ -1,0 +1,67 @@
+
+Redis
+
+1. Configuration
+  - Installation
+  - Configuration - wsl --install, wsl --distribution name
+  - Background Running - redis-server &
+
+2. Strings
+  - SET key value -> set or rename  a value
+  - GET key -> get a value
+  - DEL key -> delete a key
+  - EXISTS key -> check existence of a key
+  - GETRANGE key start end -> get a chunk
+  - MSET key1 value1 key2 value2 -> multiple maps
+  - MGET key1 key2 -> multiple gets
+  - STRLEN key -> gets the length of the str
+
+3. Integers
+  - SET key value -> set or rename  a value
+  - GET key value -> get a value
+  - INCR key -> increment the value by 1
+  - INCRBY count addition -> increment by a certain addition 
+  - DECR key -> decrement the value by 1
+  - DECRBY count addition -> decrement by a certain addition
+  - IN/DECRBYFLOAT count addition -> increment or decrement a float by a certain addition  
+
+4. Expiration
+  - SETEX key seconds value -> set with expiration
+  - EXPIRE key seconds - set expiration time
+  - TTL key - view remaining seconds
+
+5. Keys
+  - KEYS * -> view all keys
+  - KEY *ies -> view all keys ending in ies
+  - KEY movie? -> view all keys starting with movie and one char at the end
+  - FLUSHALL -> delete all the data
+
+6. Lists
+  - LPUSH key value1 [valuen, ...] - push a value at the top
+  - RPUSH key value - push a value at the bottom
+  - LRANGE key start end - get data based on index (-1 means the end)
+  - LPOST key value - gets the position of a value
+  - LLEN key - the length of the list, if doesn't exist return 0
+  - LPOP key - pop the value at the top
+  - RPOP key - pop the value at the bottom
+  - LSET key index new_value - update a value at a certain index
+  - LINSERT key [BEOFE|AFTER] current_value new_value - adds a new value before or after a current one
+  - LINDEX key index - return a value at an index
+  - LPUSHX/RPUSHX - adds to only an existing list
+  - SORT key DESC|ASC [ALPA] - sort
+
+7. Sets
+  - SADD key member1 [membern, ...] - add a value to a set
+  - SMEMBERS key - list all the members
+  - SCARD key - the length of the set
+  - SISMEMBER key member - looks for a member
+  - SMISMEMBER key member1, [member, ...] - look for more than one member at once
+  - SDIFF key1 key2, keyn - looks for the difference between sets
+  - SINTER key1 key2, keyn - looks for the intersection between sets
+  - SUNION key1 key2, keyn - looks for the union of sets
+
+8. Real-world Use
+ - 1. Caching
+ - 2. Real-time Events Handling (online, last seen, typing)
+
+

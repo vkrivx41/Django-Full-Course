@@ -1,0 +1,14 @@
+
+Django Channels Roadmap
+
+1. Consumers and Routing ✅
+2. Async Consumers ✅
+3. Channel Layers with Redis ✅
+4. Database Operations in Consumers ✅
+5. Chatrooms - Private (one-to-one) and Public (many users) ✅
+6. Real-time detections (online, typing, unread messages, etc) ✅
+7. Handling Attachments (images, videos, etc) ✅
+
+
+
+Extra: Sometimes we are tested, not to show our weakness, but to discover our strength

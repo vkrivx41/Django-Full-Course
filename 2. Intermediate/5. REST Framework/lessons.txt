@@ -89,7 +89,7 @@ Learn Later -> 15, 18, 20, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32
 	- filter backends -> setting filter backends, search and order filters
 	- ordering fields -> setting order fields on the API View
 
-18. Writing Filter Backends
+18. Writing Filter Backends ✅
 
 19. Pagination with PageNumberPagination & LimitOffsetPagination ✅
 	- pagination configuration -> config which type of pagination and page size to use in the settings
@@ -101,13 +101,30 @@ Learn Later -> 15, 18, 20, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32
 	- setting default ordering -> setting order_by to pk as id to avoid ordering warnings
 	- limit offset paginations -> settings and working
 
-20. Viewsets & Routers
+20. Viewsets & Routers ✅
 	- Model Viewset - setting the queryset, serializer and permission clasess
 	- Routers -> creating a Default Router, registering routes and adding them to the url patterns
 
+21. Actions, Filtering and Permissions ✅
+	- Filtering
+	- Actions (detail, methods, permissions, url_path)
 
-26. Caching with Redis and Django
+22. Viewset Permissions Admin vs. Normal User ✅
+	- override the get_queryset method and filter based on staff status
+
+
+22. Viewset Permissions Admin vs. Normal User ✅
+	- override the get_queryset method and filter based on staff status
+
+23. Creating Nested Objects  Overriding serializer create() method ✅
+24. Updating Nested Objects  ModelSerializer update() method ✅
+
+26. Caching with Redis and Django ✅
 	- redis -> installation and configuration
 	- django-redis -> installation and configuration
 	- caching -> method decorators and caching pages with cache page decorator
 	- cache invalidation -> invalidating caches with signals
+
+27. Redis - Vary Headers to Control Caching Behavior ✅
+	- default behavior -> bad when filtering happens in the backend
+	- vary_on_headers decorator
