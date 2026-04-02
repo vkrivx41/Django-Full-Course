@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 const slowFunction = (num) => {
-  for (let i = 0; i < 100_000_000; i++) { }
+  console.log("Slow Function")
+  for (let i = 0; i < 200_000_000; i++) { }
   return num * 2
 }
 
@@ -14,10 +15,22 @@ const ThemeNumberSimulation = () => {
     return slowFunction(number)
   }, [number])
 
-  const styles = {
-    backgroundColor: dark ? "black" : "gray",
-    color: dark ? "white" : "black",
-    padding: "10px"
+  console.log(result)
+  
+  const styles = useMemo(() => {
+    return {
+      backgroundColor: dark ? "black" : "gray",
+      color: dark ? "white" : "black",
+      padding: "10px"
+    }
+  }, [dark])
+  
+  useEffect(() => {
+    themeChanged()  
+  }, [styles])
+
+  const themeChanged = () => {
+    console.log("theme changed")
   }
 
   return (

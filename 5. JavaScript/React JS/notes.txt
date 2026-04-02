@@ -1,0 +1,70 @@
+- React Beginners -
+
+✅ 1. Components
+✅ 2. JSX
+✅ 3. Expressions
+
+✅ 4. Lists - map method, list keys, destructuring
+✅ 5. Props
+✅ 6. Conditional Rendering - if-else, ternary, the && and || operators
+
+✅ 7. Styling Components - inline-css, internal, import css, icons
+✅ 8. Adding Event Listeners - (onClick, onCopy, onMouse Events, etc)
+✅ 9. States - useState Hook, numbers, proper ways of handling set functions and pass initial values, 
+	  - arrays, objects, array of objects, sharing across components, callback functions (normal, LS)
+
+
+---------------- React Intermediate ---------------
+✅ 10. Portal
+✅ 11. useEffect - rendering, localStorage, fetching
+✅ 12. ContextAPI - prop drilling, contexts
+
+✅ 13. useContext - solve prob drilling, advanced use-case (user profile)
+✅ 14. useReducer - counter, to-do list, apply Open-Close Principle from SOLID principles
+✅ 15. useRef - vs states to persist values btn re-renders, DOM references, debouncing, prevent over-submission
+
+✅ 16. useId - vs random, use-cases, querySelector, multiple inputs
+✅ 17. Custom Hooks
+✅ 18. React Router
+	- Basics
+	  - BrowserRouter
+	  - Routes and wrapping Route components (path and element)
+	  - Links - Link elements to create navigation bars
+	  - Other types of routers: HashRouter, MemoryRouter, StaticRouter
+	  - Dynamic Routes - creation and the useParams hook, dynamic vs hard-coded
+	  - Nesting routes - wrapping, /* method
+        - Advanced
+	  - Navigation - wrapping, Outlet, the outlet context hook
+	  - Extra routes
+	  - Extra props for the Link object - replace, reloadDocument
+	  - NavLink
+	  - Navigation - Navigate Component, useNavigate hook
+	  - Search Params - useSearchParam hook
+	  - Navigation State - state prob, useLocation hook
+
+
+--------------- React Advanced - Performance Optimization ----------
+✅ 19. useMemo and React.memo - react.memo, slow operations, referential equality, vs useEffect
+✅ 20. useCallback - referential equality, vs useMemo
+✅ 21. Component splitting and Lazy loading - function splitting, loading simulation, useTransition Hook, refactoring
+
+✅ 22. Axios
+✅ 23. Forms Handling
+✅ 24. CSS Handling
+
+
+Projects
+
+Guided
+1. JWT Authentication
+2. Multi-step form
+3. Card Flip
+4. Music Player
+5. E-commerce
+
+Own
+1. Task Manager
+2. Video Library
+
+
+
